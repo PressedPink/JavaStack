@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" class="dark-mode">
+
+<head>
+    <title>Stack Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-signin-client_id"
+        content="1009503205449-dui0nfvkoebkimfc1l92qce38eg6p5fk.apps.googleusercontent.com" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/customcss/global.css">
+    <link rel="stylesheet" href="/customcss/googleButton.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <section class="mx-auto pageWidth">
+            <div class="card rounded-top">
+                <div class="card-header" style="background-color: #151515; border-color: #09bc8a">
+                    <h1 class="text-center" style="color: #ffffff">Login</h1>
+                </div>
+                <div class="card-body rounded-bottom" style="background-color: #151515" th:object="${loginModel}">
+                    <p>Username: <span style="color: #ffffff" th:text="*{username}"></span></p>
+                    <p>Password: <span style="color: #ffffff" th:text="*{password}"></span></p>
+                </div>
+            </div>
+        </section>
+        <br />
+    </div>
+</body>
+
+</html>

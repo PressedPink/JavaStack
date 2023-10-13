@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" class="dark-mode">
+
+<head>
+    <title>Stack Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-signin-client_id"
+        content="1009503205449-dui0nfvkoebkimfc1l92qce38eg6p5fk.apps.googleusercontent.com" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/customcss/global.css">
+    <link rel="stylesheet" href="/customcss/googleButton.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <section class="mx-auto pageWidth">
+            <div class="card rounded-top">
+                <div class="card-header" style="background-color: #151515; border-color: #09bc8a">
+                    <h1 class="text-center" style="color: #ffffff">Login</h1>
+                </div>
+                <div class="card-body rounded-bottom" style="background-color: #151515">
+                    <form method="post" class="text-center" style="text-align: center" action="/"
+                        th:action="@{processLogin}" th:object="${loginModel}" autocomplete="off" id="myForm">
+                        <input type="hidden" name="id_token" id="id_token_input" />
+                        <p class="alert alert-danger text-center" th:if="${#fields.hasErrors('username')}"
+                            th:errors="*{username}"></p>
+                        <p class="alert alert-danger text-center" th:if="${#fields.hasErrors('password')}"
+                            th:errors="*{password}"></p>
+                        <div class="page">
+                            <div class="form-group">
+                                <label for="username" style="color: #ADB5BD">Username</label>
+                                <input name="username" id="username" type="text" class="form-control"
+                                    th:field="*{username}" aria-describedby="username" placeholder="Username" />
+                            </div>
+                            <div class="form-group">
+                                <label for="password" style="color: #ADB5BD">Password</label>
+                                <input name="password" id="password" type="password" class="form-control"
+                                    th:field="*{password}" placeholder="Password" />
+                            </div>
+                            <br />
+                            <div class="button-container">
+                                <button type="submit" name="login" class="btn btn-primary" style="
+                        background-color: #09bc8a;
+                        border-color: #09bc8a;
+                        color: #444;
+                      ">
+                                    <span class="buttonText">Submit</span>
+                                </button>
+                            </div>
+                            <div id="gSignInWrapper" class="button-container">
+                                <div id="customBtn" class="customGPlusSignIn">
+                                    <span class="icon"></span>
+                                    <span class="buttonText">Google</span>
+                                </div>
+                            </div>
+                            <div class="button-container">
+                                <button type="submit" class="btn btn-primary" name="forgot_password" style="
+                        background-color: #09bc8a;
+                        border-color: #09bc8a;
+                        color: #444;
+                      ">
+                                    <span class="buttonText">Forgot Password?</span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <br>
+                    <div>
+                        <p style="text-align: center; font-size: small; color: #ADB5BD">Don't have an account yet? Sign
+                            up <a href="/signup">here</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <br />
+    </div>
+</body>
+
+</html>
